@@ -1,3 +1,5 @@
+# Stock-Simulator-Project
+My paper trading dashboard
 
 📈 Paper Trading Simulator
 
