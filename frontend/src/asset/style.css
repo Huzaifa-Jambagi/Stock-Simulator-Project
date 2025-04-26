@@ -1,0 +1,103 @@
+/* Logo */
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+/* Brand Name */
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Search Bar Container */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 12px;
+  width: 40%;
+  min-width: 200px;
+  background-color: #f8f9fa;
+}
+
+/* For mobile screens, make search bar wider */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+}
+
+/* Search Input */
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  background: transparent;
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+/* Login Button */
+.login-btn {
+  background-color: #027a5c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #025e46;
+  color: white;
+}
+
+/* Hamburger button - fixed at top right */
+.hamburger-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 220px;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Push buttons downward */
+.mobile-menu-content {
+  margin-top: 20px;
+}
