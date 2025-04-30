@@ -11,7 +11,7 @@ const transactionsRoutes = require('./routes/transactionsRoutes');
 const stockUpdater = require('./services/stockUpdater'); 
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT ;
 const url = process.env.MONGO_URL;
 
 // Middleware
