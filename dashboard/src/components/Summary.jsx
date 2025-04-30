@@ -12,7 +12,7 @@ const Summary = () => {
   useEffect(() => {
     // Fetching holdings data
     axios
-      .get("http://localhost:3002/api/holdings", {
+      .get('https://backend-stockify.onrender.com/api/holdings', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -22,7 +22,7 @@ const Summary = () => {
 
     // Fetching user data (name and balance)
     axios
-      .get("http://localhost:3002/api/userS/details", {
+      .get(https://backend-stockify.onrender.com/api/users/details', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
