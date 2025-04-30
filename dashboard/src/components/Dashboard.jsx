@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes,useNavigate } from "react-router-dom";
+import { Route, Routes,useNavigate,useLocation } from "react-router-dom";
 
 import Analytics from "./Analytics";
 import { GeneralContextProvider } from "./GeneralContext";
@@ -12,12 +12,15 @@ const Dashboard = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const breakpoint = 850;
 
-  const navigate = useNavigate();  // Move this line outside the second useEffect
+  const navigate = useNavigate();  
+   const location = useLocation();
 
   useEffect(() => {
-    // Redirect to /dashboard when the page loads
-    navigate('/dashboard');
-  }, [navigate]);  // This will run once when the component mounts
+    // Only redirect to /dashboard if the path is exactly "/"
+    if (location.pathname === "/") {
+      navigate("/dashboard");
+    }
+  }, [location, navigate]); 
   
   useEffect(() => {
     //  update state when window resizes
