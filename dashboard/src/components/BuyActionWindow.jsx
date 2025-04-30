@@ -9,7 +9,7 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
   const { closeBuyWindow } = useContext(GeneralContext);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const fetchStockPrice = async () => {
       try {
@@ -23,19 +23,19 @@ const BuyActionWindow = ({ uid }) => {
         console.error("Failed to fetch stock price:", err);
       }
     };
-
+    
     if (uid) {
       fetchStockPrice();
     }
   }, [uid]);
-
+  
   const handleBuyClick = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
       console.error("No auth token—please log in first");
       return;
     }
-
+    
     try {
       await axios.post(
         "http://localhost:3002/api/transactions/buy",
@@ -60,11 +60,11 @@ const BuyActionWindow = ({ uid }) => {
     }
     
   };
-
+  
   const handleCancelClick = () => {
     closeBuyWindow();
   };
-
+  
   return (
     <div className="container" id="buy-window" draggable="true">
       <div className="regular-order">
@@ -80,7 +80,7 @@ const BuyActionWindow = ({ uid }) => {
               value={stockQuantity}
             />
           </fieldset>
-
+          
           <fieldset>
             <legend>Price</legend>
             <input
@@ -94,7 +94,7 @@ const BuyActionWindow = ({ uid }) => {
           </fieldset>
         </div>
       </div>
-
+      
       <div className="buttons">
         <span>Margin required ₹{(stockQuantity * stockPrice).toFixed(2)}</span>
         <div>

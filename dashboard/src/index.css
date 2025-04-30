@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 #root {
@@ -12,13 +13,21 @@ body {
   max-width: 100%;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* dashboard.jsx */
 .dashboard-container {
   width: 100%;
   height: 90vh;
@@ -157,6 +166,8 @@ code {
   background: #7bdd7f;
 }
 
+/* HOLDINGS.JSX */
+
 .title {
   font-size: 1.3rem;
   font-weight: 300;
@@ -258,6 +269,8 @@ code {
 .item:hover {
   cursor: pointer;
 }
+
+/* MENU */
 
 .menu-container {
   flex-basis: 68%;
@@ -486,7 +499,7 @@ hr {
 .item:hover {
   cursor: pointer;
 }
-
+/* SUMMARY.JSX */
 .username h6 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -576,6 +589,7 @@ hr {
   margin-top: 6%;
 }
 
+/* TOPBAR.JSX */
 .topbar-container {
   width: 100%;
   height: 10vh;
@@ -642,6 +656,50 @@ hr {
   cursor: pointer;
 }
 
+/* WATCHLIST.JSX */
+/* Dashboard container styles */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 60px); /* Adjust based on your TopBar height */
+  overflow: hidden;
+}
+
+/* WatchList styles - modify based on your existing styles */
+.dashboard-container .watchlist {
+  flex: 0 0 500px; /* Fixed width for desktop */
+  overflow-y: auto;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Content area styles */
+.dashboard-container .content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Full width content when WatchList is hidden */
+.dashboard-container .content.full-width {
+  width: 100%;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 850px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .dashboard-container .content {
+    width: 100%;
+  }
+  
+  /* Style for the /stocks route on mobile */
+  .mobile-watchlist {
+    width: 100%;
+    padding: 10px;
+  }
+}
 .watchlist-container {
   flex-basis: 32%;
   height: 100%;
@@ -890,10 +948,13 @@ hr {
 /* responsive dashboard */
 /* Mobile view styles */
 @media (max-width: 999px) {
+
+  /*topbar */
   .indices-container {
     display: none !important;
   }
   
+  /* menu */
   .menu-container {
     display: none !important;
   }
@@ -906,11 +967,7 @@ hr {
     padding: 10px;
   }
   
-  .back-arrow {
-    color: #ff5722;
-    font-size: 18px;
-  }
-  
+
   .page-title {
     font-weight: 500;
   }
@@ -934,6 +991,10 @@ hr {
   
   .username {
     margin: 0;
+  }
+  .back-arrow {
+    color: #ff5722;
+    font-size: 18px;
   }
 }
 
