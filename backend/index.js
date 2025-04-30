@@ -38,14 +38,8 @@ app.use('/api/holdings', holdingsRoutes);
 app.use('/api/transactions',transactionsRoutes);
 
 //test
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('Backend is working!');
-});
-app.get('/api', (req, res) => {
-  res.send('API base route is working!');
-});
-app.get('/hello', (req, res) => {
-  res.send('Hello route is working!');
 });
 
 // Start server
