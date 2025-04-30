@@ -15,7 +15,7 @@ const WatchList = () => {
   useEffect(() => {
     const fetchStocks = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/api/stocks",{
+        const res = await axios.get("https://backend-stockify.onrender.com/api/stocks",{
           headers:{
             Authorization :`Bearer ${localStorage.getItem("token")}`
           }
@@ -111,7 +111,7 @@ const WatchListActions = ({ uid }) => {
 
   const handleAnalyticsClick = async () => {
     try {
-      const res = await axios.get(`http://localhost:3002/api/stocks/${uid}`);
+      const res = await axios.get(`https://backend-stockify.onrender.com/api/stocks/${uid}`);
       console.log(res.data)
       generalContext.setAnalyticsData(res.data); 
       navigate("/analytics"); 
