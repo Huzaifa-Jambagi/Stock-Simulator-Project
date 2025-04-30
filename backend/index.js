@@ -15,7 +15,15 @@ const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://stock-simulator-project.vercel.app', // frontend
+    'https://stock-simulator-dashboard.vercel.app' // dashboard
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
