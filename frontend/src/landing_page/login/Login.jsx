@@ -21,11 +21,11 @@ const Login = () => {
 
     } catch (error) {
       // Check for specific error response from the backend
-      if (error.response && error.response.status === 400) {
-        setLoginError('Invalid username or password');
-      } else {
-        setLoginError('An error occurred. Please try again later.');
-      }
+      if (error.response && (error.response.status === 401 || error.response.status === 400)) {
+         setLoginError('Invalid username or password');
+     } else {
+       setLoginError('An error occurred. Please try again later.');
+       }
     }
   }
   return (
