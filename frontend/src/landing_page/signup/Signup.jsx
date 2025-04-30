@@ -9,7 +9,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     console.log('Login data:', data)
-    await axios.post('http://localhost:3002/api/users/register',data);
+    await axios.post('https://backend-stockify.onrender.com/api/users/register',data);
     navigate('/login');
   }  
   return (
