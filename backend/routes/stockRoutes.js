@@ -4,7 +4,7 @@ const { getStockBySymbol, getAllStocks } = require('../controllers/stockControll
 const {authorize}=require('../middlewares');
 
 // Use the imported functions directly
-router.get('/',authorize, getAllStocks);
+router.get('/', getAllStocks);
 router.get('/:symbol', getStockBySymbol);
 
 module.exports = router;
