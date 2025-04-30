@@ -6,7 +6,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/holdings", {
+      .get("https://backend-stockify.onrender.com/api/holdings", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
