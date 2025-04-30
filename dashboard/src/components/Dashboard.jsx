@@ -15,12 +15,21 @@ const Dashboard = () => {
   const navigate = useNavigate();  
    const location = useLocation();
 
-  useEffect(() => {
-    // Only redirect to /dashboard if the path is exactly "/"
-    if (location.pathname === "/") {
-      navigate("/dashboard");
-    }
-  }, [location, navigate]); 
+useEffect(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const tokenFromUrl = urlParams.get("token");
+
+  if (tokenFromUrl) {
+    localStorage.setItem("token", tokenFromUrl);
+    // clean the URL (optional)
+    window.history.replaceState(null, null, location.pathname);
+  }
+
+  // Only redirect if we're at root
+  if (location.pathname === "/") {
+    navigate("/dashboard");
+  }
+}, [location, navigate]);
   
   useEffect(() => {
     //  update state when window resizes
