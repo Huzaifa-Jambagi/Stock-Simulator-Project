@@ -8,17 +8,17 @@ import Summary from "./Summary";
 import WatchList from "./WatchList";
 
 const Dashboard = () => {
-  // State to track viewport width
+  // track viewport width
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const breakpoint = 850;
 
   useEffect(() => {
-    // Handler to update state when window resizes
+    //  update state when window resizes
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
     
-    // Add event listener
+
     window.addEventListener("resize", handleResize);
     
     // Clean up
@@ -33,7 +33,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <GeneralContextProvider>
-        {/* Only render WatchList when screen width is above breakpoint */}
+        {/*  render WatchList when screen width is above breakpoint */}
         {showWatchList && <WatchList />}
         
         <div className={`content ${!showWatchList ? "full-width" : ""}`}>
