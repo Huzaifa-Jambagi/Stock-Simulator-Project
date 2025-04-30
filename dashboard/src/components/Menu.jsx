@@ -65,7 +65,7 @@ const Menu = () => {
     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     
     // Redirect to login page
-    navigate('/login');
+    window.location.href = 'https://stock-simulator-project.vercel.app/';
     console.log("Logged out successfully");
   };
 
