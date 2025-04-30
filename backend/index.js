@@ -33,21 +33,22 @@ app.use('/api/holdings', holdingsRoutes);
 app.use('/api/transactions',transactionsRoutes);
 
 //test
-app.get('/api/test', (req, res) => {
-  res.json({ message: 'API is working' });
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
 });
 
 // Start server
 app.listen(PORT, async () => {
-  try {
+  console.log(`Starting server on port ${PORT}`);
+   try {
+    console.log('Attempting to connect to MongoDB...');
     await mongoose.connect(url);
-    console.log(' MongoDB connected');
-
-    // Start cron job
-   stockUpdater();
-    console.log(' Server running on port', PORT);
+    console.log('MongoDB connected successfully');
+    console.log('Starting stock updater...');
+    stockUpdater();
+    console.log(`Server is now running and listening on port ${PORT}`);
   } catch (err) {
-    console.error(' MongoDB connection error:', err);
+    console.error('MongoDB connection error:', err);
   }
 });
 
