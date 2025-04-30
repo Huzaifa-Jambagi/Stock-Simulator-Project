@@ -13,12 +13,6 @@ const stockUpdater = require('./services/stockUpdater');
 const app = express();
 const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
-const tempurl="mongodb://127.0.0.1:27017/paper_trading"
-
-if (!url) {
-  console.error('MONGO_URL is not defined in .env');
-  process.exit(1);
-}
 
 // Middleware
 app.use(cors());
