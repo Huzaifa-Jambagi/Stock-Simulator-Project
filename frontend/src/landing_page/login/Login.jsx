@@ -15,7 +15,7 @@ const Login = () => {
 
     localStorage.setItem("token", token)
    
-    window.location.href = `http://localhost:5173/dashboard/?token=${token}`;
+     window.location.href = `https://stock-simulator-dashboard.vercel.app/dashboard/?token=${token}`;
   }
   return (
     <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', background: 'white' }}>
