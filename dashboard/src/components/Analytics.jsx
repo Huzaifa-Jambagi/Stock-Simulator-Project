@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import "./Analytics.css"; // ✅ make sure to create and import this CSS file
+import "./Analytics.css"; 
 import GeneralContext from "./GeneralContext";
 
 const Analytics = () => {
@@ -26,7 +26,7 @@ const Analytics = () => {
           </div>
         </div>
       )}
-      <Link to={"/"} className="btn btn-green back-btn">
+      <Link to={"/dashboard"} className="btn btn-green back-btn">
         Back to Dashboard
       </Link>
     </div>
