@@ -24,6 +24,11 @@ app.use(cors({
   credentials: true
 }));
 
+app.use((req, res, next) => {
+  console.log(`Received request: ${req.method} ${req.url}`);
+  next();
+});
+
 app.use(express.json());
 
 // Routes
@@ -35,6 +40,12 @@ app.use('/api/transactions',transactionsRoutes);
 //test
 app.get('/', (req, res) => {
   res.send('Backend is working!');
+});
+app.get('/api', (req, res) => {
+  res.send('API base route is working!');
+});
+app.get('/hello', (req, res) => {
+  res.send('Hello route is working!');
 });
 
 // Start server
