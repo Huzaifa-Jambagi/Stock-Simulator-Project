@@ -13,7 +13,7 @@ const SellActionWindow = ({ uid }) => {
   useEffect(() => {
     const fetchStockPrice = async () => {
       try {
-        const res = await axios.get(`http://localhost:3002/api/stocks/${uid}`, {
+        const res = await axios.get(`https://backend-stockify.onrender.com/api/stocks/${uid}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setStockPrice(res.data.currentPrice);
@@ -33,7 +33,7 @@ const SellActionWindow = ({ uid }) => {
 
     try {
       await axios.post(
-        "http://localhost:3002/api/transactions/sell",
+        "https://backend-stockify.onrender.com/api/transactions/sell",
         {
           stockName: uid,
           quantity: Number(stockQuantity),
