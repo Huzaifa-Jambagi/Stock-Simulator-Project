@@ -13,7 +13,7 @@ const BuyActionWindow = ({ uid }) => {
   useEffect(() => {
     const fetchStockPrice = async () => {
       try {
-        const res = await axios.get(`http://localhost:3002/api/stocks/${uid}`, {
+        const res = await axios.get(`https://backend-stockify.onrender.com/api/stocks/${uid}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -38,7 +38,7 @@ const BuyActionWindow = ({ uid }) => {
     
     try {
       await axios.post(
-        "http://localhost:3002/api/transactions/buy",
+        "https://backend-stockify.onrender.com/api/transactions/buy",
         {
           symbol: uid,
           qty: Number(stockQuantity),
@@ -53,7 +53,7 @@ const BuyActionWindow = ({ uid }) => {
     } catch (error) {
       console.error("Order placement failed:", error.response || error);
       if (error.response && error.response.data && error.response.data.message) {
-        alert(error.response.data.message);  // <<< show the backend error message
+        alert(error.response.data.message);  //  backend error message
       } else {
         alert("Something went wrong while buying the stock");
       }
@@ -89,7 +89,7 @@ const BuyActionWindow = ({ uid }) => {
               id="price"
               step="0.05"
               value={stockPrice}
-              disabled // 👈 prevent manual typing
+              disabled // prevent manual typing
             />
           </fieldset>
         </div>
