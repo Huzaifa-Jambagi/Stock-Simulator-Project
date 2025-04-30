@@ -32,6 +32,11 @@ app.use('/api/stocks', stockRoutes);
 app.use('/api/holdings', holdingsRoutes);
 app.use('/api/transactions',transactionsRoutes);
 
+//test
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working' });
+});
+
 // Start server
 app.listen(PORT, async () => {
   try {
