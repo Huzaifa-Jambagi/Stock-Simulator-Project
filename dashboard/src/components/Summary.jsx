@@ -22,7 +22,7 @@ const Summary = () => {
 
     // Fetching user data (name and balance)
     axios
-      .get(https://backend-stockify.onrender.com/api/users/details', {
+      .get('https://backend-stockify.onrender.com/api/users/details', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
