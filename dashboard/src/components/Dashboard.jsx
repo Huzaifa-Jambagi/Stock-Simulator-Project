@@ -6,6 +6,7 @@ import { GeneralContextProvider } from "./GeneralContext";
 import Holdings from "./Holdings";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
+import NotFound from "./NotFound";
 
 const Dashboard = () => {
   // track viewport width
@@ -61,6 +62,7 @@ useEffect(() => {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/holdings" element={<Holdings />} />
             <Route path="/stocks" element={<WatchList />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </GeneralContextProvider>
