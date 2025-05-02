@@ -1,17 +1,18 @@
- import axios from 'axios';
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Signup = () => {
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
   const navigate = useNavigate();
-
+  
   const onSubmit = async (data) => {
     console.log('Login data:', data)
     await axios.post('https://backend-stockify.onrender.com/api/users/register',data);
     navigate('/login');
   }  
+  
   return (
     <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', background: 'white' }}>
       <div className="card shadow p-4" style={{ width: '400px' }}>
@@ -55,10 +56,10 @@ const Signup = () => {
         </form>
         
         <div className="text-center mb-2">Already have an account?</div>
-        <a href="/login" className="btn btn-outline-success w-100">Login</a>
+        <Link to="/login" className="btn btn-outline-success w-100">Login</Link>
       </div>
     </div>
   );
 }
 
-export default Signup
+export default Signup;
