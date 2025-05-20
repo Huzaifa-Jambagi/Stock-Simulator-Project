@@ -3,7 +3,7 @@ My paper trading dashboard
 
 📈 Paper Trading Simulator
 
-Welcome to my Paper Trading Simulator , a virtual stock trading platform where you can buy and sell stocks with a ₹50,000 virtual balance, track your holdings, monitor real-time prices, and watch your portfolio grow (or crash 🫠) — all without risking a single rupee!
+Welcome to my Paper Trading Simulator , a virtual stock trading platform where you can buy and sell stocks with a ₹50,000 virtual balance, track your holdings, monitor real-time prices, and watch your portfolio grow (or crash ) — all without risking a single rupee!
 
 I built this project to practice real-world React + Node.js + MongoDB skills, and to simulate how actual stock trading apps work, but in a much simpler and educational way.
 
@@ -20,7 +20,7 @@ I built this project to practice real-world React + Node.js + MongoDB skills, an
 
 
 
- 🏗️ Project Architecture
+ •Project Architecture
 
 - Frontend: React.js
 - Backend: Node.js, Express.js
