@@ -1,16 +1,24 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Signup = () => {
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   
   const onSubmit = async (data) => {
-    console.log('Login data:', data)
-    await axios.post('https://backend-stockify.onrender.com/api/users/register',data);
-    navigate('/login');
+    setLoading(true);
+   try {
+      await axios.post('https://backend-stockify.onrender.com/api/users/register', data);
+      alert('Signed up successfully!');
+      navigate('/login');
+    } catch (error) {
+      alert('Signup failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   }  
   
   return (
@@ -52,7 +60,9 @@ const Signup = () => {
             {errors.password && <span className="text-danger">Password required</span>}
           </div>
           
-          <button type="submit" className="btn btn-success w-100 mb-3">SignUp</button>
+           <button type="submit" className="btn btn-success w-100 mb-3" disabled={loading}>
+            {loading ? "Signing up..." : "SignUp"}
+          </button>
         </form>
         
         <div className="text-center mb-2">Already have an account?</div>
